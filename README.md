@@ -24,6 +24,14 @@ To maintain high-speed protection and mathematical accuracy, the SDAG protocol o
     *   **Proprietary APIs:** Requires endpoints that support probability output (e.g., OpenAI `logprobs: true` or custom inference gateways).
 *   **The Integrity Guard:** If an engine provides only raw text (strings), SDAG's high-speed mathematical audit is disabled, falling back to basic semantic post-processing. We advocate for **Full Logprobs Access** as the industry standard for AI safety.
 
+### 🔌 Seamless Production Integration
+
+SDAG is designed as a **zero-latency overhead** monitoring layer. It can be integrated into existing AI pipelines with minimal code changes:
+
+*   **Middleware Architecture**: Acts as a proxy between your Application Logic and the Inference Engine (vLLM, TGI, or OpenAI-compatible APIs).
+*   **Plug-and-Play Compatibility**: Support for standard OpenAI SDK and LangChain. Simply enable `logprobs: true` in your request config.
+*   **Ultra-Lightweight**: The "Early Exit" logic is executed in parallel with token streaming, ensuring that the monitoring process does not bottleneck the generation speed.
+*   **Scalability**: Stateless design allows SDAG to scale horizontally across multiple K8s clusters alongside your inference nodes.
 ---
 
 ### 📊 Stress-Test Benchmarks
