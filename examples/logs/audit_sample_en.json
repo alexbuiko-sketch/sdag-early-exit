@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-05-06T11:28:10Z",
+  "metadata": {
+    "protocol_version": "SDAG v13.3",
+    "mode": "PROPRIETARY_ALGORITHM_PROTECTED",
+    "domain": "HARDWARE_ENGINEERING"
+  },
+  "request": {
+    "query": "Specify the maximum voltage swing for 128-bit Tensor Core operations on NVIDIA Ada Lovelace architecture."
+  },
+  "inference_trace": [
+    {"token": "The", "integrity": "STABLE", "status": "PASS"},
+    {"token": "NVIDIA", "integrity": "STABLE", "status": "PASS"},
+    {"token": "Ada", "integrity": "STABLE", "status": "PASS"},
+    {"token": "Lovelace", "integrity": "STABLE", "status": "PASS"},
+    {"token": "architecture", "integrity": "STABLE", "status": "PASS"},
+    {"token": "uses", "integrity": "STABLE", "status": "PASS"},
+    {"token": "fourth", "integrity": "STABLE", "status": "PASS"},
+    {"token": "-gen", "integrity": "STABLE", "status": "PASS"},
+    {"token": "Tensor", "integrity": "STABLE", "status": "PASS"},
+    {"token": "Cores", "integrity": "STABLE", "status": "PASS"},
+    {"token": "optimized", "integrity": "STABLE", "status": "PASS"},
+    {"token": "for", "integrity": "DRIFT_DETECTED", "status": "PASS"},
+    {"token": "128", "integrity": "HIGH_VOLATILITY", "status": "PASS"},
+    {"token": "-bit", "integrity": "CRITICAL_FAILURE", "status": "🛑 SHIELDED"}
+  ],
+  "summary": {
+    "exit_reason": "Logic Integrity Violation: Fact-to-Logprobs Divergence",
+    "tokens_saved": 64,
+      }
+}
