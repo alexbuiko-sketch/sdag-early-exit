@@ -49,6 +49,15 @@ SDAG is not just a safety tool; it is an efficiency engine. By terminating fault
 - [ ] **v14.0:** Integration with ESG scoring (Energy Savings Report).
 - [ ] **Demo Release:** A lightweight Sandbox version for `logprobs`-enabled environments.
 
+ ### 🛠️ Ongoing Research & Development (Current Focus)
+
+We are continuously stress-testing the boundaries of inference stability. Our current R&D pipeline includes:
+
+*   **Real-World Energy Telemetry**: We are moving beyond theoretical estimates to direct hardware measurements. Using specialized sensors and NVML (NVIDIA Management Library), we are quantifying the exact reduction in Joules per query when **Early Exit** prevents "Dead Compute" during logical loops.
+*   **"Confident Liar" Stress-Tests**: Intensive benchmarking against scenarios where models exhibit high perceived certainty while delivering 100% false information. We are refining the $SCI$ thresholds to catch these "silent failures" where traditional semantic filters fail.
+*   **Hardware-Level DVFS Correlation**: Investigating how Dynamic Voltage and Frequency Scaling (DVFS) affects token entropy. Our goal is to identify if hardware thermal throttling correlates with an increase in model "hallucination probability."
+*   **SDAG v14.0 - ESG Integration**: Developing a standardized "Energy Waste" reporting module that can be integrated into corporate ESG (Environmental, Social, and Governance) scores, making AI safety a measurable financial asset.
+
 ---
 
 ### 🛡️ Intellectual Property & Licensing
