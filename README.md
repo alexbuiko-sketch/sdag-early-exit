@@ -70,5 +70,20 @@ We are continuously stress-testing the boundaries of inference stability. Our cu
 
 ### 🛡️ Intellectual Property & Licensing
 The core weights and proprietary entropy-to-gradient coefficients are private. This repository serves as a functional announcement and documentation for the SDAG Monitoring Layer. 
+## 🛡️ SDAG Public Preview: Inference Integrity Audit (v14.0)
+
+This repository includes a protected trial version of the **Systematic Defect Awareness & Guidance (SDAG)** monitoring layer. Use this script to audit GPU efficiency and eliminate "Dead Compute" during LLM inference.
+
+### 📊 Trial & ESG Metrics
+*   **Trial Period:** Active until **May 17, 2026**.
+*   **Monitoring Domain:** `TECHNICAL_AUDIT` (Optimized for hardware telemetry and GPU behavior analysis).
+*   **Protection:** The code is obfuscated to ensure the integrity of the Early Exit triggers and ESG (Energy Saved) reporting.
+
+### 🚀 Quick Start
+1. Ensure you have `python3` and the `requests` library installed.
+2. Download the `sdag_trial.py` file.
+3. Run the audit via terminal:
+   ```bash
+   python3 sdag_trial.py
 
 **For B2B Integration & SDK Access:** Contact to Alex Buiko
