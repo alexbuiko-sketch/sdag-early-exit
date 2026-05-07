@@ -1,7 +1,7 @@
 # Autonomous SDAG: The "Early Exit" Protocol 🛡️⚡
 **Systematic Defect Awareness & Guidance (SDAG) v14.4**
 
-> **Compatibility Note:** We apologize for the environment conflicts encountered in previous builds. The current release (v14.4) has been completely refactored to ensure stable execution across Linux (A100/H100/) and Windows environments.
+> **Compatibility Note:** We apologize for the environment conflicts encountered in previous builds. The current release (v14.4) has been completely refactored to ensure stable execution across Linux (A100/H100/Vast.ai) and Windows environments.
 
 ## 🎯 The Vision
 In an era of ubiquitous LLMs, the primary cost is no longer generation, but **Inference Integrity**. "Early Exit" is a monitoring layer designed to kill hallucinations at the moment of their birth. It transforms AI from a "stochastic parrot" into a self-auditing expert system.
