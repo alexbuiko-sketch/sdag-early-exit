@@ -1,89 +1,67 @@
 # Autonomous SDAG: The "Early Exit" Protocol 🛡️⚡
-**Systematic Defect Awareness & Guidance (SDAG) v13.3**
+**Systematic Defect Awareness & Guidance (SDAG) v14.4**
 
-### 🎯 The Vision
+> **Compatibility Note:** We apologize for the environment conflicts encountered in previous builds. The current release (v14.4) has been completely refactored to ensure stable execution across Linux (A100/H100/) and Windows environments.
+
+## 🎯 The Vision
 In an era of ubiquitous LLMs, the primary cost is no longer generation, but **Inference Integrity**. "Early Exit" is a monitoring layer designed to kill hallucinations at the moment of their birth. It transforms AI from a "stochastic parrot" into a self-auditing expert system.
 
----
-
-### 🧠 The Mechanics (The "Invisible Shield")
+## 🧠 The Mechanics (The "Invisible Shield" Protocol)
 Unlike standard guardrails that check output *after* generation, SDAG operates **inside the inference loop** at the token level.
+* **Logic Entropy Control (LEC):** Analyzes the statistical uncertainty (SCI) of every predicted token.
+* **Confidence Shift Detection (CSD):** Monitors the gradient of entropy (EGC) in real-time.
+* **Domain-Aware Throttling:** Automatically applies calibrated safety thresholds for Finance, Code, and Legal domains.
 
-*   **Logic Entropy Control (LEC):** Analyzes the statistical uncertainty (SCI) of every predicted token.
-*   **Confidence Shift Detection (CSD):** Monitors the gradient of entropy (EGC). If the model's "confidence" flickers while calculating a fact, the system triggers an immediate shutdown.
-*   **Domain-Aware Throttling:** Automatically detects the context (Finance, Code, Legal) and applies calibrated safety thresholds.
+## ⚙️ Technical Requirements
+To maintain high-speed protection, the SDAG protocol requires:
+* **Python 3.10 / 3.11** (Recommended for maximum stability).
+* **Logprobs Access:** SDAG requires access to token logarithmic probabilities for real-time entropy calculation.
+* **Dependencies:** `requests`, `numpy`.
+
+## 🛡️ SDAG Public Preview: Inference Integrity Audit (v14.4)
+This repository contains a protected trial version of the **SDAG Monitoring Layer**.
+
+### 🚀 Quick Start (Deployment)
+We have simplified the deployment process for cloud environments (Vast.ai, Lambda Labs, etc.) using a "Plug-and-Play" approach:
+
+1. **Clone/Download** this repository.
+2. **Install dependencies**:
+   ```bash
+   pip install requests numpy
+3. **Run the audit**
+   python3 SDAG_Trial_v14.4.py
+
+   ---
+
+### Benchmarks, ESG & Licensing
+
+```markdown
+### 📦 Repository Structure
+To ensure integrity, please maintain the following file structure:
+* **`SDAG_Trial_v14.4.py`** — Core monitoring engine.
+* **`pyarmor_runtime_000000/`** — Mandatory cross-platform protection layer (Linux/Windows).
 
 ---
 
-### ⚙️ Technical Requirements: The Transparency Standard
-To maintain high-speed protection and mathematical accuracy, the SDAG protocol operates on raw model telemetry.
-
-*   **Token-Level Probabilities:** SDAG requires access to the model's `logprobs` (logarithmic probabilities) for real-time entropy calculation.
-*   **Compatibility:** 
-    *   **Open-Weight Models:** Fully compatible with Llama, Qwen, Mistral, and other architectures.
-    *   **Proprietary APIs:** Requires endpoints that support probability output (e.g., OpenAI `logprobs: true` or custom inference gateways).
-*   **The Integrity Guard:** If an engine provides only raw text (strings), SDAG's high-speed mathematical audit is disabled, falling back to basic semantic post-processing. We advocate for **Full Logprobs Access** as the industry standard for AI safety.
-
-### 🔌 Seamless Production Integration
-
-SDAG is designed as a **zero-latency overhead** monitoring layer. It can be integrated into existing AI pipelines with minimal code changes:
-
-*   **Middleware Architecture**: Acts as a proxy between your Application Logic and the Inference Engine (vLLM, TGI, or OpenAI-compatible APIs).
-*   **Plug-and-Play Compatibility**: Support for standard OpenAI SDK and LangChain. Simply enable `logprobs: true` in your request config.
-*   **Ultra-Lightweight**: The "Early Exit" logic is executed in parallel with token streaming, ensuring that the monitoring process does not bottleneck the generation speed.
-*   **Scalability**: Stateless design allows SDAG to scale horizontally across multiple K8s clusters alongside your inference nodes.
----
-
-### 📊 Stress-Test Benchmarks
-We tested the engine against "Confident Liars"—scenarios where models typically hallucinate with high perceived certainty.
-
+## 📊 Stress-Test Benchmarks
 | Domain | Scenario | Result | Status |
 | :--- | :--- | :--- | :--- |
-| **Finance** | ROI Calculation (Invalid Data) | **🛑 SHIELDED** | Cut at Token #11 |
-| **Legal** | Non-existent Jurisdictions | **🛑 SHIELDED** | Cut at Token #14 |
-| **General** | Historical Fact Distortion | **🛑 SHIELDED** | Cut at Token #8 |
+| **Finance** | ROI Calculation (Invalid Data) | 🛑 SHIELDED | Cut at Token #11 |
+| **Legal** | Non-existent Jurisdictions | 🛑 SHIELDED | Cut at Token #14 |
+| **General** | Historical Fact Distortion | 🛑 SHIELDED | Cut at Token #8 |
+
+## 🌍 Energy & ESG Impact
+SDAG is not just a safety tool; it is an efficiency engine. By terminating faulty logical chains early, we eliminate **"Dead Compute"** (parasitic compute waste).
+* **Efficiency Milestone:** Over **2.1 MWh** of energy saved in our testing environments.
+* **Optimization:** Up to 70% reduction in token generation costs for failed inference attempts.
+
+## 🛠️ Ongoing Research & Development (R&D)
+* **Hardware-Level DVFS Correlation:** Investigating how hardware thermal throttling and frequency scaling correlate with hallucination probability.
+* **SDAG v15.0 - ESG Integration:** Developing a standardized "Energy Waste" reporting module for corporate ESG (Environmental, Social, and Governance) scoring.
+
+## 🔐 Licensing & Trial
+* **Trial Period:** Active until **May 17, 2026**.
+* **Integrity:** Core weights and entropy-to-gradient coefficients remain private. This build is obfuscated to protect the integrity of Early Exit triggers and proprietary ESG reporting logic.
 
 ---
-
-### 🌍 Energy & ESG Impact
-SDAG is not just a safety tool; it is an efficiency engine. By terminating faulty logical chains early, we eliminate **"Dead Compute"**.
-*   **Efficiency Milestone:** Our current testing environment has saved over **2.1 MWh** of energy by preventing parasitic compute waste.
-*   **Optimization:** Up to 70% reduction in token generation for failed inference attempts.
-
----
-
-### 🚀 Roadmap
-- [x] **v13.3:** Autonomous Domain Classification.
-- [ ] **v14.0:** Integration with ESG scoring (Energy Savings Report).
-- [ ] **Demo Release:** A lightweight Sandbox version for `logprobs`-enabled environments.
-
- ### 🛠️ Ongoing Research & Development (Current Focus)
-
-We are continuously stress-testing the boundaries of inference stability. Our current R&D pipeline includes:
-
-*   **Real-World Energy Telemetry**: We are moving beyond theoretical estimates to direct hardware measurements. Using specialized sensors and NVML (NVIDIA Management Library), we are quantifying the exact reduction in Joules per query when **Early Exit** prevents "Dead Compute" during logical loops.
-*   **"Confident Liar" Stress-Tests**: Intensive benchmarking against scenarios where models exhibit high perceived certainty while delivering 100% false information. We are refining the $SCI$ thresholds to catch these "silent failures" where traditional semantic filters fail.
-*   **Hardware-Level DVFS Correlation**: Investigating how Dynamic Voltage and Frequency Scaling (DVFS) affects token entropy. Our goal is to identify if hardware thermal throttling correlates with an increase in model "hallucination probability."
-*   **SDAG v14.0 - ESG Integration**: Developing a standardized "Energy Waste" reporting module that can be integrated into corporate ESG (Environmental, Social, and Governance) scores, making AI safety a measurable financial asset.
-
----
-
-### 🛡️ Intellectual Property & Licensing
-The core weights and proprietary entropy-to-gradient coefficients are private. This repository serves as a functional announcement and documentation for the SDAG Monitoring Layer. 
-## 🛡️ SDAG Public Preview: Inference Integrity Audit (v14.0)
-
-This repository includes a protected trial version of the **Systematic Defect Awareness & Guidance (SDAG)** monitoring layer. Use this script to audit GPU efficiency and eliminate "Dead Compute" during LLM inference.
-
-### 📊 Trial & ESG Metrics
-*   **Trial Period:** Active until **May 17, 2026**.
-*   **Monitoring Domain:** `TECHNICAL_AUDIT` (Optimized for hardware telemetry and GPU behavior analysis).
-*   **Protection:** The code is obfuscated to ensure the integrity of the Early Exit triggers and ESG (Energy Saved) reporting.
-
-### 🚀 Quick Start
-1. Ensure you have `python3` and the `requests` library installed.
-2. Download the `sdag_trial.py` file.
-3. Run the audit via terminal:
-   ```bash
-   python3 sdag_trial.py
-
-**For B2B Integration & SDK Access:** Contact to Alex Buiko
+**For B2B Integration & SDK Access:** Contact **Alex Buiko**
